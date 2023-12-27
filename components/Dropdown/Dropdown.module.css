@@ -1,0 +1,11 @@
+.dropdownContainer{
+    background-color: antiquewhite;
+    padding: 5px;
+    margin: 5px;
+}
+
+.select{
+    padding: 5px;
+    background-color: aqua;
+    min-width: 100px;
+}
