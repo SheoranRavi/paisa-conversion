@@ -11,8 +11,7 @@ export default function Form(props) {
     //let options = [];
     const inCurrency = useRef('INR');
     const outCurrency = useRef('USD');
-    let inCurrencyValue = 0;
-    //let outCurrencyValue = 0;
+    const inCurrencyValue = useRef(0);
     const currencyRates = useRef({});
 
     console.log('Form being rendered');
@@ -61,13 +60,13 @@ export default function Form(props) {
             console.log('args: ', args);
             throw new Error('Unknown currency selected');
         }
-        setNewOutValue(inCurrencyValue);
+        setNewOutValue(inCurrencyValue.current);
     }
 
     const handleValueChange = function(value){
         // calculate the out currency
         // set the out currency value
-        inCurrencyValue = value;
+        inCurrencyValue.current = value;
         setNewOutValue(value);
     }
 
@@ -104,7 +103,7 @@ export default function Form(props) {
         <div>
             <div className={styles.formContainer}>
                 <Dropdown name={inputDropdownName.current} options={options} defaultVal={inCurrency.current} handleChange={handleOptionChange}/>
-                <Input name="inCurrencyValue" value={inCurrencyValue} isReadonly={false} handleValueChange={handleValueChange}/>
+                <Input name="inCurrencyValue" value={inCurrencyValue.current} isReadonly={false} handleValueChange={handleValueChange}/>
                 <Input name="outCurrencyValue" value={outCurrencyValue} isReadonly={true}/>
                 <Dropdown name={outputDropdownName.current} options={options} defaultVal={outCurrency.current} handleChange={handleOptionChange}/>
             </div>
