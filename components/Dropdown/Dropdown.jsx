@@ -5,11 +5,10 @@ export default function Dropdown(props){
     let {options, name, defaultVal, handleChange} = props;
     const [renderCount, setRenderCount] = useState(0);
 
-    console.log('options in dropdown: ', options);
+    console.log('Dropdown being rendered: ', name);
     // sort the options array so that default val comes first and everything else remains in place.
     const sortOptions = function(){
         let idx = options.indexOf(defaultVal);
-        console.log('idx of def val', idx);
         if(idx === -1)
             return;
         options = options.filter((item) => item !== defaultVal);
@@ -18,7 +17,11 @@ export default function Dropdown(props){
 
     const handleOptionChange = function(e){
         console.log('Option changed: ', e.target.value);
-        handleChange(e.target.value);
+        let eventArgs = {
+            currencySelected: e.target.value,
+            name: name
+        };
+        handleChange(eventArgs);
     }
 
     useEffect(() => {
@@ -33,7 +36,6 @@ export default function Dropdown(props){
             <select name={name} className={styles.select} onChange={handleOptionChange}>
                 {
                     options.map(item => {
-                        console.log("item is: ", item);
                         return (<option value={item} key={item}>
                             {item}
                         </option>)
