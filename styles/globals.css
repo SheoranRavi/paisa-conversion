@@ -100,8 +100,23 @@ a {
   text-decoration: none;
 }
 
+h1{
+  color: gray;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+input[type="number"]{
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfied;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
 }

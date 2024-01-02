@@ -1,5 +1,9 @@
 .formContainer{
     display: flex;
     flex-direction: row;
-    background-color: antiquewhite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 40px;
 }

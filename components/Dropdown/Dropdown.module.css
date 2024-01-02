@@ -1,11 +1,13 @@
 .dropdownContainer{
-    background-color: antiquewhite;
-    padding: 5px;
-    margin: 5px;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 10px;
 }
 
 .select{
-    padding: 5px;
     background-color: aqua;
     min-width: 100px;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 100%;
 }

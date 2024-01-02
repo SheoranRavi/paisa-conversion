@@ -14,6 +14,8 @@ export default function Form(props) {
     const inCurrencyValue = useRef(0);
     const currencyRates = useRef({});
 
+    let counter = 0;
+
     console.log('Form being rendered');
 
     const inputDropdownName = useRef('inCurrency');
@@ -66,6 +68,8 @@ export default function Form(props) {
     const handleValueChange = function(value){
         // calculate the out currency
         // set the out currency value
+        counter++;
+        console.log('counter is: ', counter);
         inCurrencyValue.current = value;
         setNewOutValue(value);
     }
@@ -107,7 +111,6 @@ export default function Form(props) {
                 <Input name="outCurrencyValue" value={outCurrencyValue} isReadonly={true}/>
                 <Dropdown name={outputDropdownName.current} options={options} defaultVal={outCurrency.current} handleChange={handleOptionChange}/>
             </div>
-            <button onClick={showValue}>Click to print value</button>
         </div>
     )
 }
