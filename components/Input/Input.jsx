@@ -50,8 +50,8 @@ export default function Input(props) {
             {
                 !isReadonly &&
                 <div className={styles.btnContainer}>
-                    <button className={styles.btn + ' ' + styles.btnUp} onClick={clickPos}><i className="fa">&#9650;</i></button>
-                    <button className={styles.btn + ' ' + styles.btnDown} onClick={clickNeg}><i className="fa">&#9660;</i></button>
+                    <button className={styles.btn + ' ' + styles.btnUp} onClick={clickPos}><i className="fa">&#11165;</i></button>
+                    <button className={styles.btn + ' ' + styles.btnDown} onClick={clickNeg}><i className="fa">&#11167;</i></button>
                 </div>
             }
         </div>

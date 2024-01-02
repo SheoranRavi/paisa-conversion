@@ -30,6 +30,8 @@
 
 .btnContainer{
     border-radius: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn{
